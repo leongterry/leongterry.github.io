@@ -11,6 +11,16 @@ $(function () {
     });
     $(".nav-item").first().click(); // default active tab
 
+    // Home feature click -> open Photos tab
+    $('#home-feature').on('click', function() {
+        $('.nav-item[data-tab-id="tab-photos"]').click();
+    }).on('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            $(this).click();
+        }
+    });
+
     const video = document.getElementById('reels-video');
     if (!video) return;
     // Only try to play if paused — avoids unnecessary play() calls
