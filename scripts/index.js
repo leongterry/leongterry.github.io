@@ -1,4 +1,12 @@
 $(function () {
+    const video = document.getElementById('reels-video');
+    if (!video) return;
+    // Only try to play if paused — avoids unnecessary play() calls
+    if (video.paused) {
+        const p = video.play();
+        if (p && p.catch) p.catch(err => console.info('Autoplay prevented or failed:', err));
+    }
+
     $(".nav-item").click(function() {
         $(this).siblings()
             .removeClass("active")
@@ -8,6 +16,9 @@ $(function () {
             .attr("aria-current", "page");
         let tabId = $(this).data("tabId")
         $(`#${tabId}`).show().siblings().hide();
+
+        // mute video on tab change
+        video.muted = true
     });
     $(".nav-item").first().click(); // default active tab
 
@@ -20,12 +31,4 @@ $(function () {
             $(this).click();
         }
     });
-
-    const video = document.getElementById('reels-video');
-    if (!video) return;
-    // Only try to play if paused — avoids unnecessary play() calls
-    if (video.paused) {
-        const p = video.play();
-        if (p && p.catch) p.catch(err => console.info('Autoplay prevented or failed:', err));
-    }
 });
