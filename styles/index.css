@@ -54,3 +54,10 @@
   flex-wrap: wrap;
   gap: 1rem;
 }
+
+@media (max-width: 575.98px) {
+  .photo-grid img {
+    width: 100%;
+    height: auto;
+  }
+}
