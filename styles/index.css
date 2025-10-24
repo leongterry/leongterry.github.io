@@ -55,7 +55,7 @@
   gap: 1rem;
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 768px) {
   .photo-grid img {
     width: 100%;
     height: auto;
