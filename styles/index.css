@@ -61,3 +61,14 @@
     height: auto;
   }
 }
+
+.cat-pic-container {
+  height: 315px;
+  display: flex;
+}
+
+.cat-pic-container img {
+  display: flex;
+  width: 200px;
+  margin: auto;
+}
