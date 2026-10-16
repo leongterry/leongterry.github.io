@@ -69,7 +69,8 @@
 
 .cat-pic-container img {
   display: flex;
-  width: 200px;
+  width: 230px;
+  margin-top: 0;
   margin: auto;
 }
 
